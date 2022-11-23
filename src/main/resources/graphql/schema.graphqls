@@ -1,0 +1,17 @@
+schema {
+    query: BookQuery
+}
+
+type BookQuery {
+    getAllBook: [BookEntity]
+}
+
+interface Node {
+    id: ID!
+}
+
+type BookEntity implements Node {
+    id: ID!
+    name: String
+    author: String
+}

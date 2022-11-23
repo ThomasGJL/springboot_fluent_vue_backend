@@ -1,0 +1,33 @@
+server:
+  port: 8088
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:
+    username:
+    password:
+
+    #driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    #url: jdbc:sqlserver://;serverName=payslip-dev.database.windows.net;DatabaseName=payslip-dev-app
+    #username:
+    #password:
+    #dbType: sqlserver
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+graphql:
+  servlet:
+    enabled: true
+    mapping: /graphql
+    exception-handlers-enabled: true
+    context-setting: PER_REQUEST_WITH_INSTRUMENTATION
+  tools:
+    schema-location-pattern: /graphql/schema.graphqls
+
+
+
+
