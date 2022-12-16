@@ -8,6 +8,7 @@ import com.example.springbootfluentvue.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -31,4 +32,18 @@ public class BookController {
 
         return jsonObject;
     }
+
+    @GetMapping("/getBook")
+    public JSONObject getAllBook(@RequestParam String tag){
+
+        List<BookEntity> books = bookService.getBookbyTag(tag);
+
+        JSONObject jsonObject = new JSONObject();
+
+        JSONArray jsonArray = JSONArray.parseArray(JSON.toJSONString(books));
+        jsonObject.put("result", jsonArray);
+
+        return jsonObject;
+    }
+
 }

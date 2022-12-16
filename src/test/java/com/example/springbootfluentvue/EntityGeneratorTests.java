@@ -10,14 +10,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class EntityGeneratorTests {
 
-    static final String url = "";
-    static final String username = "";
-    static final String password = "";
+    static final String url = "jdbc:mysql://127.0.0.1:3306/springboot-vue?useSSL=true&useUnicode=true&characterEncoding=utf-8";
+    static final String username = "root";
+    static final String password = "123456";
 
     /***
-    static final String url = "";
-    static final String username = "";
-    static final String password = "";
+    static final String url = "jdbc:sqlserver://;serverName=payslip-dev.database.windows.net;DatabaseName=payslip-dev-app";
+    static final String username = "admindev";
+    static final String password = "Qazxsw23edc@";
     ***/
 
     @Test
